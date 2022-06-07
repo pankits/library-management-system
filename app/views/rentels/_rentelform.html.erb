@@ -1,26 +1,26 @@
 <div class="container">
-<%= form_for(@libraryan) do |f| %>
+<%= form_for(@rentel) do |f| %>
     <div class = "row" style = "text-align: center;">
         <div class = "col-lg-6">
             <%= f.label :name %><br>
             <%= f.text_field :name,class:"form-control" %>
-            <% @libraryan.errors.full_messages_for(:name).each do |message| %>
+            <% @rentel.errors.full_messages_for(:name).each do |message| %>
                 <span><%= message %></span><br>
             <% end %>
         </div>
 
         <div class = "col-lg-6">
-            <%= f.label :age %><br>
-            <%= f.number_field :age,class:"form-control" %>
-            <% @libraryan.errors.full_messages_for(:address).each do |message|%>
+            <%= f.label :phone %><br>
+            <%= f.number_field :phone,class:"form-control"%>
+            <% @rentel.errors.full_messages_for(:phone).each do |message| %>
                 <span><%= message %></span>
             <% end %>
         </div>
 
         <div class = "col-lg-6">
-            <%= f.label :phone %><br>
-            <%= f.number_field :phone,class:"form-control" %>
-            <% @libraryan.errors.full_messages_for(:address).each do |message|%>
+            <%= f.label :address %><br>
+            <%= f.text_area :address,class:"form-control" %>
+            <% @rentel.errors.full_messages_for(:address).each do |message| %>
                 <span><%= message %></span>
             <% end %>
         </div>
@@ -28,13 +28,13 @@
         <%= f.fields_for :user do |u| %>
             <div class = "col-lg-6">
                 <%= u.label :email %><br>
-                <%= u.text_field :email,class:"form-control"%>
+                <%= u.text_field :email,class:"form-control" %>
                
             </div>
 
             <div class = "col-lg-6">
                 <%= u.label :password %><br>
-                <%= u.password_field :password,class:"form-control"%>
+                <%= u.password_field :password,class:"form-control" %>
                
             </div>
 

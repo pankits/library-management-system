@@ -1,0 +1,26 @@
+<%= link_to 'Back-To-Book',rentels_path,class:"btn btn-primary"%>
+<table class="table">
+<tr>
+  <th>Book-Name</th>
+  <th>Author-Name</th>
+  <th>Title</th>
+  <th>Price</th>
+  <th>Issue-Date</th>
+  <th colspan="2">Action</th>
+</tr>
+
+   <% @bookissues.each do |bookissue|%>
+    <tr>
+   
+    <td><%= bookissue.book.book_name%></td>
+    <td><%= bookissue.book.author_name%></td>
+    <td><%= bookissue.book.title%></td>
+    <td><%= bookissue.book.price%></td>
+    <td><%= bookissue.issue_date%></td>
+  
+    <td><%= link_to 'Destroy',bookissue,method: :delete,class:"btn btn-primary"%></td>
+  
+   <%end%>
+   
+</tr>
+</table>

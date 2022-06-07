@@ -1,6 +1,7 @@
 class LibraryansController < ApplicationController
   def index
-    @libraryan =Libraryan.all
+    @books = Book.all.paginate(:page => params[:page], per_page: 3)
+    @libraryans = Libraryan.paginate(:page => params[:page], per_page: 3)
   end
 
   def new
@@ -36,7 +37,8 @@ class LibraryansController < ApplicationController
    
    @libraryan =Libraryan.new(libraryan_params)
     if @libraryan.save
-       redirect_to libraryans_path
+       UserMailer.with(user: @libraryan).welcome_email.deliver_now
+       redirect_to new_user_session_path   
    else
     puts "libraryan was not created sucessfull"
    end
