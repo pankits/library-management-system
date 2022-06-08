@@ -8,7 +8,7 @@
   <th>Issue-Date</th> 
   <th colspan="2">Action</th>
 </tr>
-  <% i=0%>
+  <% @i=0%>
    <% @bookissues.each do |bookissue|%>
     <tr>
    
@@ -17,7 +17,7 @@
     <td><%= bookissue.book.title%></td>
     <td><%= bookissue.book.price%></td>
     <td><%= bookissue.issue_date%></td>
-    <% i=i+ bookissue.book.price.to_i%>
+    <% @i=@i+ bookissue.book.price.to_i%>
   
     <td><%= link_to 'Destroy',bookissue,method: :delete,class:"btn btn-primary"%></td>
   
@@ -26,5 +26,5 @@
 </tr>
 </table>
 
-<h1>Total Price :<%= i%></h1>
-<%= button_to 'Pay Now',charges_path%>
+<h1>Total Price :<%= @i%></h1>
+<%= button_to 'Pay Now',charges_path %>
