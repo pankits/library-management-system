@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :books
   get '/books/:id/issuer', to: 'books#issue', as: :book_issue
   resources :bookissues
+  resources :charges
+
   
   
   

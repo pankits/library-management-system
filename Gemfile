@@ -19,8 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem "image_processing", "~> 1.2"
-gem 'will_paginate', '~> 3.0.5'
-
+gem 'will_paginate'
+gem 'stripe'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

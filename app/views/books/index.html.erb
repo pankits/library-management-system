@@ -12,11 +12,11 @@
           <td><%= book.title%></td>
           <td><%= book.price%></td>
           <td><%= link_to 'Edit',edit_book_path(book.id)%></td>
-          <td><%= image_tag(book.avatar ,width:"20%")if book.avatar.attached?%></td> 
+         
          
           <td><%= link_to 'Destroy',book_path(book.id),method: :delete %></td>
           <%end%>
-          <%= will_paginate @libraryans%>
+         
     </tr>
 </table>
 
