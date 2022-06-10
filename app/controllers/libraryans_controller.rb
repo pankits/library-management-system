@@ -34,7 +34,6 @@ class LibraryansController < ApplicationController
 
   end
   def create
-   
    @libraryan =Libraryan.new(libraryan_params)
     if @libraryan.save
        UserMailer.with(user: @libraryan).welcome_email.deliver_now
